@@ -98,7 +98,7 @@ For a fastest reproduction of the experiments, it is also possible to execute th
 
    ```bash
    [DOCKER]$ exit
-   $ docker cp process_mining_RWD_container:process-mining-RWD/process_mining_dashboard.html .
+   $ docker cp process_mining_rwd_container:process-mining-RWD/process_mining_dashboard.html .
    ```
 
    
