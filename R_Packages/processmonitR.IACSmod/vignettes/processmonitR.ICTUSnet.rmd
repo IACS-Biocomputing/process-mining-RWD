@@ -1,0 +1,22 @@
+---
+title: "Introduction to processmonitR"
+author: "Gert Janssenswillen"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to processmonitR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+The processmonitR package contains 4 preconfigured dashboard to analyse activities, resources, rework and performance of event logs, respectively. Given an `eventlog` they can be called as follows.
+
+```{r eval = F}
+performance_dashboard(eventlog)
+resource_dashboard(eventlog)
+rework_dashboard(eventlog)
+activity_dashboard(eventlog)
+```
+
+For more information, please check <www.bupar.net>
+

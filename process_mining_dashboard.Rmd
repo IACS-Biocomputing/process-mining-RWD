@@ -1,0 +1,294 @@
+---
+title: 'Code Stroke Analysis Dashboard'
+author: "Implementation by [Juan González García](mailto:jgonzalezgarc.iacs@aragon.es)"
+date: "`r format(Sys.time(), '%d %B, %Y, %H:%M')`"
+output:
+  html_document:
+    self_contained: yes
+---
+
+  <!-- html_document: -->
+  <!--   toc: true -->
+  <!--   toc_float: true -->
+  <!--   theme: spacelab -->
+
+
+<!-- From https://stackoverflow.com/questions/45017632/getting-rmarkdown-command-line-arguments-printed-to-the-html-report -->
+
+
+```{r setup.n.args, include=FALSE}
+knitr::opts_knit$set(echo=FALSE, out.width='1000px', dpi=200, fig.keep="all")
+
+options(width = 1000)
+options(knitr.table.format = "html")
+
+args <- commandArgs(trailingOnly=T)
+parseArgs <- function(x) strsplit(sub("^--", "", x), "=")
+args.df <- as.data.frame(do.call("rbind", parseArgs(args)))
+args.list <- as.list(as.character(args.df$V2))
+names(args.list) <- args.df$V1
+
+require("knitr")
+knitr::opts_knit$set(root.dir = args.list$root_dir)
+
+```
+
+```{r wd, include=FALSE}
+getwd()
+args.list$root_dir
+```
+
+```{r setup, include=FALSE}
+# knitr::opts_chunk$set(echo=TRUE)
+library(tidyverse)
+library(mongolite)
+library(bupaR.IACSmod)
+library(processmapR.IACSmod)
+library(edeaR.IACSmod)
+library(ggthemes)
+library(DiagrammeR)
+
+#db_version is not required 
+db_version = ""
+
+
+stroke_log_collection <- mongo(db = paste0("stroke_", db_version),
+                               collection = "activity_log",
+                               url = "mongodb://localhost" )
+
+stroke_log_df <- stroke_log_collection$find()
+
+stroke_log_df$event <- factor(stroke_log_df$event,
+                              c("urgent_care_admission",
+                                "urgent_care_first_attention",
+                                "urgent_care_ct",
+                                "urgent_care_fibrinolysis",
+                                "urgent_care_observation_room",
+                                "urgent_care_discharge",
+                                "urgent_care_exit",
+                                "hospital_admission",
+                                "hospital_surgery",
+                                "hospital_discharge",
+                                "long_stay_hospital_admission",
+                                "long_stay_hospital_surgery",
+                                "long_stay_hospital_discharge"))
+
+levels(stroke_log_df$event) <-
+  c("ER Admission",
+    "ER First Attention",
+    "ER CT",
+    "ER Fibrinolysis",
+    "ER Observation Room",
+    "ER Discharge",
+    "ER Exit",
+    "Hospital Admission",
+    "Hospital Surgery",
+    "Hospital Discharge",
+    "Long-stay Hospital Admission",
+    "Long-stay Hospital Surgery",
+    "Long-stay Hospital Discharge")
+
+hospital_ids <- paste0("Hospital_",
+                       formatC(rank(sort(unique(c(stroke_log_df$urgent_care_hospital_id, stroke_log_df$hospital_id)))), width = 2, flag = 0))
+names(hospital_ids) <- sort(unique(c(stroke_log_df$urgent_care_hospital_id, stroke_log_df$hospital_id)))
+
+colnames(stroke_log_df)[colnames(stroke_log_df)=="event"] <- "Activity"
+
+# Eventlog construction (https://www.bupar.net/creating_eventlogs.html#lack_of_transitional_lifecycle)
+
+eventlog_stroke <-
+  stroke_log_df %>% mutate(status = "complete",
+                           activity_instance = 1:nrow(.)) %>%
+  eventlog(case_id = "id",
+           activity_id = "Activity",
+           timestamp = "timestamp",
+           resource_id = "resource",
+           activity_instance_id = "activity_instance",
+           lifecycle_id = "status")
+
+# Coloring
+qual_col_pals = ggthemes::calc_pal()
+qual_col_pals(12) -> dotted_chart_palette
+dotted_chart_palette = dotted_chart_palette[1:length(sort(unique(eventlog_stroke$Activity)))]
+cols <- dotted_chart_palette
+names(cols) <- sort(unique(eventlog_stroke$Activity))
+
+stroke_type_df <- read.csv("data/stroke_codes.csv", sep = ";")
+
+```
+
+## Process discovery results {.tabset}
+
+### Overall
+
+#### Trace Explorer
+
+List of traces that cover 95% of the total episode count in the event logs
+
+```{r trace_explorer_all, echo=FALSE, warning=FALSE}
+
+eventlog_stroke %>%
+  trace_explorer(coverage = 0.95,
+                 show_labels = F,
+                 scale_fill = scale_color_manual(values = cols,
+                                                 aesthetics = c("colour", "fill")))
+
+```
+
+#### Process map (Frequency)
+
+Frequency process map of episodes that cover 95% of the total episode count in the event logs
+
+```{r process_map_freq_all, echo=FALSE, warning=FALSE, fig.height=10}
+eventlog_stroke %>%
+  filter_trace_frequency(percentage = 0.95) %>%
+  process_map(rankdir = "TB", render = F) -> process_map_freq
+
+render_graph(process_map_freq)
+
+```
+
+
+#### Process map (Median times)
+
+Throughtput (median) time process map of episodes that cover 95% of the total episode count in the event logs
+
+```{r process_map_time_all, echo=FALSE, warning=FALSE, fig.height=10}
+eventlog_stroke %>%
+  filter_trace_frequency(percentage = 0.95) %>%
+  process_map(rankdir = "TB", type = performance(FUN=median, units = "hours"))
+```
+
+#### Timeline
+
+Timeline of all episodes (relative starting time)
+
+```{r timeline_all, echo=FALSE, warning=FALSE, message = FALSE}
+
+eventlog_stroke %>% 
+  dotted_chart(x = "relative", y = "duration", units = "days", palette = cols)
+```
+
+### Ischaemic Strokes
+
+```{r ischaemic_stroke_setup, echo=FALSE, warning=FALSE}
+eventlog_stroke %>%
+  group_by_case %>%
+  mutate(main_hospital_diagnosis =
+           gsub(pattern='\\.',
+                replacement='',
+                x=as.factor(hospital_diagnosis_code[which(!is.na(hospital_diagnosis_code))[1]]))) %>%
+  filter(main_hospital_diagnosis %in% (stroke_type_df %>% filter(type == "I") %>% pull(clean_code))) %>%
+  ungroup_eventlog -> eventlog_stroke_ischaemic
+```
+
+#### Trace Explorer
+
+List of traces that cover 95% of the total ischaemic episode count in the event logs
+
+```{r trace_explorer_ischaemic, echo=FALSE, warning=FALSE}
+
+eventlog_stroke_ischaemic %>%
+  trace_explorer(coverage = 0.95,
+                 show_labels = F,
+                 scale_fill = scale_color_manual(values = cols,
+                                                 aesthetics = c("colour", "fill")))
+
+```
+
+#### Process map (Frequency)
+
+Frequency process map of episodes that cover 95% of the total ischaemic episode count in the event logs
+
+```{r process_map_freq_ischaemic, echo=FALSE, warning=FALSE, fig.height=10}
+eventlog_stroke_ischaemic %>%
+  filter_trace_frequency(percentage = 0.95) %>%
+  process_map(rankdir = "TB")
+```
+
+
+#### Process map (Median times)
+
+Throughtput (median) time process map of episodes that cover 95% of the total ischaemic episode count in the event logs
+
+```{r process_map_time_ischaemic, echo=FALSE, warning=FALSE, fig.height=10}
+eventlog_stroke_ischaemic %>%
+  filter_trace_frequency(percentage = 0.95) %>%
+  process_map(rankdir = "TB", type = performance(FUN=median, units = "hours"))
+```
+
+#### Timeline
+
+Timeline of all ischaemic  episodes (relative starting time)
+
+```{r timeline_ischaemic, echo=FALSE, warning=FALSE, message = FALSE}
+
+eventlog_stroke_ischaemic %>%
+  dotted_chart(x = "relative", y = "duration", units = "days", palette = cols)
+```
+
+### Hemorrhagic Strokes
+
+```{r hemorrhagic_stroke_setup, echo=FALSE, warning=FALSE}
+eventlog_stroke %>%
+  group_by_case %>%
+  mutate(main_hospital_diagnosis =
+           gsub(pattern='\\.',
+                replacement='',
+                x=as.factor(hospital_diagnosis_code[which(!is.na(hospital_diagnosis_code))[1]]))) %>%
+  filter(main_hospital_diagnosis %in% (stroke_type_df %>% filter(type %in% c("H", "H")) %>% pull(clean_code))) %>%
+  ungroup_eventlog -> eventlog_stroke_hemorrhagic
+```
+
+#### Trace Explorer
+
+List of traces that cover 95% of the total hemorrhagic episodes count in the event logs
+
+```{r trace_explorer_hemorrhagic, echo=FALSE, warning=FALSE}
+
+eventlog_stroke_hemorrhagic %>%
+  trace_explorer(coverage = 0.95,
+                 show_labels = F,
+                 scale_fill = scale_color_manual(values = cols,
+                                                 aesthetics = c("colour", "fill")))
+
+```
+
+#### Process map (Frequency)
+
+Frequency process map of episodes that cover 95% of the total hemorrhagic episodes count in the event logs
+
+```{r process_map_freq_hemorrhagic, echo=FALSE, warning=FALSE, fig.height=10}
+eventlog_stroke_hemorrhagic %>%
+  filter_trace_frequency(percentage = 0.95) %>%
+  process_map(rankdir = "TB")
+```
+
+
+#### Process map (Median times)
+
+Throughtput (median) time process map of episodes that cover 95% of the total hemorrhagic episodes count in the event logs
+
+```{r process_map_time_hemorrhagic, echo=FALSE, warning=FALSE, fig.height=10}
+eventlog_stroke_hemorrhagic %>%
+  filter_trace_frequency(percentage = 0.95) %>%
+  process_map(rankdir = "TB", type = performance(FUN=median, units = "hours"))
+```
+
+#### Timeline
+
+Timeline of all hemorrhagic  episodes (relative starting time)
+
+```{r timeline_hemorrhagic, echo=FALSE, warning=FALSE, message = FALSE}
+
+eventlog_stroke_hemorrhagic %>%
+  dotted_chart(x = "relative", y = "duration", units = "days", palette = cols)
+```
+
+### R Session Info
+
+This information is for debug purposes only
+
+```{r sessionInfo, echo=F}
+sessionInfo()
+```

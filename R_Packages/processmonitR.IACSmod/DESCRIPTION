@@ -1,0 +1,17 @@
+Package: processmonitR.IACSmod
+Type: Package
+Title: Building Process Monitoring Dashboards
+Version: 0.1.0
+Date: 2017-06-18
+Authors@R: person("Gert","Janssenswillen", email = "gert.janssenswillen@uhasselt.be", 
+  role = c("aut","cre"))
+Description: Functions for constructing dashboards for business process monitoring. Building on the event log objects class from package 'bupaR'. Allows the use to assemble custom shiny dashboards based on process data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 3.0)
+LazyData: true
+Imports: magrittr, ggplot2, dplyr, bupaR.IACSmod, edeaR.IACSmod, shiny, miniUI
+RoxygenNote: 6.1.1
+URL: https://www.bupar.net
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr

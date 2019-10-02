@@ -1,0 +1,7 @@
+event_id,patient_id,admission_time,surgery_time,discharge_time,hospital_code,admission_type,discharge_code,discharge_service_code,diagnosis_code,poa1,d2,poa2,d3,poa3,d4,poa4,d5,poa5,d6,poa6,d7,poa7,d8,poa8,d9,poa9,d10,poa10,d11,poa11,d12,poa12,d13,poa13,d14,poa14,d15,poa15
+6704370,qgLMnL8R+tICDmjMK5e6cg==,2017-07-27,,2017-08-05,500055,1,4,,I63.02,S,I67.1,S,G82.50,S,,,,,,,,,,,,,,,,,,,,,,,,
+6682112,QrITle0OluLQQWJeZWXAew==,2017-01-28,,2017-02-02,500021,1,1,,I63.9,S,I10,S,E78.5,S,Z79.82,E,,,,,,,,,,,,,,,,,,,,,,
+6652467,xfAB8T0Y0OHkQeokVa/2pw==,2017-07-21,2017-07-23,2017-08-22,500021,1,2,,I63.02,S,G51.0,S,I63.8,N,G91.1,S,I10,S,E78.5,S,,,,,,,,,,,,,,,,,,
+6761872,xfAB8T0Y0OHkQeokVa/2pw==,2017-08-22,,2017-10-31,500114,2,1,,G91.1,,I63.349,,,,,,,,,,,,,,,,,,,,,,,,,,,
+6774124,xfAB8T0Y0OHkQeokVa/2pw==,2017-07-03,2017-07-03,2017-07-07,500129,2,1,,M16.11,S,I10,S,,S,,,,,,,,,,,,,,,,,,,,,,,,
+6581057,eRxPH7267fNqdYjqgYNuHA==,2017-05-08,,2017-05-19,500016,1,1,,I60.9,S,K50.113,S,Z90.49,S,Z88.6,E,Z93.3,E,,,,,,,,,,,,,,,,,,,,

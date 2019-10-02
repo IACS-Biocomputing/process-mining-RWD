@@ -1,0 +1,163 @@
+﻿icd_version;code;clean_code;description;type;subtype
+9-MC;430;430;Subarachnoid hemorrhage;H;SAH
+9-MC;431;431;Intracerebral hemorrhage;H;ICH
+9-MC;432.1;4321;Subdural hemorrhage;H;SDH
+9-MC;432.9;4329;Unspecified intracranial hemorrhage;H;
+9-MC;433.01;43301;Occlusion and stenosis of basilar artery with cerebral infarction;I;
+9-MC;433.11;43311;Occlusion and stenosis of carotid artery with cerebral infarction;I;
+9-MC;433.21;43321;Occlusion and stenosis of vertebral artery with cerebral infarction;I;
+9-MC;433.31;43331;Occlusion and stenosis of multiple and bilateral precerebral arteries with cerebral infarction;I;
+9-MC;433.81;43381;Occlusion and stenosis of other specified precerebral artery with cerebral infarction;I;
+9-MC;433.91;43391;Occlusion and stenosis of unspecified precerebral artery with cerebral infarction;I;
+9-MC;434.01;43401;Cerebral thrombosis with cerebral infarction;I;
+9-MC;434.11;43411;Cerebral embolism with cerebral infarction;I;
+9-MC;434.91;43491;Cerebral artery occlusion, unspecified with cerebral infarction;I;
+9-MC;435.0;4350;Basilar artery syndrome;T;
+9-MC;435.1;4351;Vertebral artery syndrome;T;
+9-MC;435.2;4352;Subclavian steal syndrome;T;
+9-MC;435.3;4353;Vertebrobasilar artery syndrome;T;
+9-MC;435.8;4358;Other specified transient cerebral ischemias;T;
+9-MC;435.9;4359;Unspecified transient cerebral ischemia;T;
+9-MC;436;436;Acute, but ill-defined, cerebrovascular disease;T;
+9-MC;437.1;4371;Other generalized ischemic cerebrovascular disease;T;
+10-MC;I60.00;I6000;Nontraumatic subarachnoid hemorrhage from unspecified carotid siphon and bifurcation;H;SAH
+10-MC;I60.01;I6001;Nontraumatic subarachnoid hemorrhage from right carotid siphon and bifurcation;H;SAH
+10-MC;I60.02;I6002;Nontraumatic subarachnoid hemorrhage from left carotid siphon and bifurcation;H;SAH
+10-MC;I60.10;I6010;Nontraumatic subarachnoid hemorrhage from unspecified middle cerebral artery;H;SAH
+10-MC;I60.11;I6011;Nontraumatic subarachnoid hemorrhage from right middle cerebral artery;H;SAH
+10-MC;I60.12;I6012;Nontraumatic subarachnoid hemorrhage from left middle cerebral artery;H;SAH
+10-MC;I60.2;I602;Nontraumatic subarachnoid hemorrhage from anterior communicating artery;H;SAH
+10-MC;I60.30;I6030;Nontraumatic subarachnoid hemorrhage from unspecified posterior communicating artery;H;SAH
+10-MC;I60.31;I6031;Nontraumatic subarachnoid hemorrhage from right posterior communicating artery;H;SAH
+10-MC;I60.32;I6032;Nontraumatic subarachnoid hemorrhage from left posterior communicating artery;H;SAH
+10-MC;I60.4;I604;Nontraumatic subarachnoid hemorrhage from basilar artery;H;SAH
+10-MC;I60.50;I6050;Nontraumatic subarachnoid hemorrhage from unspecified vertebral artery;H;SAH
+10-MC;I60.51;I6051;Nontraumatic subarachnoid hemorrhage from right vertebral artery;H;SAH
+10-MC;I60.52;I6052;Nontraumatic subarachnoid hemorrhage from left vertebral artery;H;SAH
+10-MC;I60.6;I606;Nontraumatic subarachnoid hemorrhage from other intracranial arteries;H;SAH
+10-MC;I60.7;I607;Nontraumatic subarachnoid hemorrhage from unspecified intracranial artery;H;SAH
+10-MC;I60.8;I608;Other nontraumatic subarachnoid hemorrhage;H;SAH
+10-MC;I60.9;I609;Nontraumatic subarachnoid hemorrhage, unspecified;H;SAH
+10-MC;I61.0;I610;Nontraumatic intracerebral hemorrhage in hemisphere, subcortical;H;ICH
+10-MC;I61.1;I611;Nontraumatic intracerebral hemorrhage in hemisphere, cortical;H;ICH
+10-MC;I61.2;I612;Nontraumatic intracerebral hemorrhage in hemisphere, unspecified;H;ICH
+10-MC;I61.3;I613;Nontraumatic intracerebral hemorrhage in brain stem;H;ICH
+10-MC;I61.4;I614;Nontraumatic intracerebral hemorrhage in cerebellum;H;ICH
+10-MC;I61.5;I615;Nontraumatic intracerebral hemorrhage, intraventricular;H;ICH
+10-MC;I61.6;I616;Nontraumatic intracerebral hemorrhage, multiple localized;H;ICH
+10-MC;I61.8;I618;Other nontraumatic intracerebral hemorrhage;H;ICH
+10-MC;I61.9;I619;Nontraumatic intracerebral hemorrhage, unspecified;H;ICH
+10-MC;I62.00;I6200;Nontraumatic subdural hemorrhage, unspecified;H;SDH
+10-MC;I62.01;I6201;Nontraumatic acute subdural hemorrhage;H;SDH
+10-MC;I62.02;I6202;Nontraumatic subacute subdural hemorrhage;H;SDH
+10-MC;I62.9;I629;Nontraumatic intracranial hemorrhage, unspecified;H;
+10-MC;I63.00;I6300;Cerebral infarction due to thrombosis of unspecified precerebral artery;I;
+10-MC;I63.011;I63011;Cerebral infarction due to thrombosis of right vertebral artery;I;
+10-MC;I63.012;I63012;Cerebral infarction due to thrombosis of left vertebral artery;I;
+10-MC;I63.013;I63013;Cerebral infarction due to thrombosis of bilateral vertebral arteries;I;
+10-MC;I63.019;I63019;Cerebral infarction due to thrombosis of unspecified vertebral artery;I;
+10-MC;I63.02;I6302;Cerebral infarction due to thrombosis of basilar artery;I;
+10-MC;I63.031;I63031;Cerebral infarction due to thrombosis of right carotid artery;I;
+10-MC;I63.032;I63032;Cerebral infarction due to thrombosis of left carotid artery;I;
+10-MC;I63.033;I63033;Cerebral infarction due to thrombosis of bilateral carotid arteries;I;
+10-MC;I63.039;I63039;Cerebral infarction due to thrombosis of unspecified carotid artery;I;
+10-MC;I63.09;I6309;Cerebral infarction due to thrombosis of other precerebral artery;I;
+10-MC;I63.10;I6310;Cerebral infarction due to embolism of unspecified precerebral artery;I;
+10-MC;I63.111;I63111;Cerebral infarction due to embolism of right vertebral artery;I;
+10-MC;I63.112;I63112;Cerebral infarction due to embolism of left vertebral artery;I;
+10-MC;I63.113;I63113;Cerebral infarction due to embolism of bilateral vertebral arteries;I;
+10-MC;I63.119;I63119;Cerebral infarction due to embolism of unspecified vertebral artery;I;
+10-MC;I63.12;I6312;Cerebral infarction due to embolism of basilar artery;I;
+10-MC;I63.131;I63131;Cerebral infarction due to embolism of right carotid artery;I;
+10-MC;I63.132;I63132;Cerebral infarction due to embolism of left carotid artery;I;
+10-MC;I63.133;I63133;Cerebral infarction due to embolism of bilateral carotid arteries;I;
+10-MC;I63.139;I63139;Cerebral infarction due to embolism of unspecified carotid artery;I;
+10-MC;I63.19;I6319;Cerebral infarction due to embolism of other precerebral artery;I;
+10-MC;I63.20;I6320;Cerebral infarction due to unspecified occlusion or stenosis of unspecified precerebral arteries;I;
+10-MC;I63.211;I63211;Cerebral infarction due to unspecified occlusion or stenosis of right vertebral artery;I;
+10-MC;I63.212;I63212;Cerebral infarction due to unspecified occlusion or stenosis of left vertebral artery;I;
+10-MC;I63.213;I63213;Cerebral infarction due to unspecified occlusion or stenosis of bilateral vertebral arteries;I;
+10-MC;I63.219;I63219;Cerebral infarction due to unspecified occlusion or stenosis of unspecified vertebral artery;I;
+10-MC;I63.22;I6322;Cerebral infarction due to unspecified occlusion or stenosis of basilar artery;I;
+10-MC;I63.231;I63231;Cerebral infarction due to unspecified occlusion or stenosis of right carotid arteries;I;
+10-MC;I63.232;I63232;Cerebral infarction due to unspecified occlusion or stenosis of left carotid arteries;I;
+10-MC;I63.233;I63233;Cerebral infarction due to unspecified occlusion or stenosis of bilateral carotid arteries;I;
+10-MC;I63.239;I63239;Cerebral infarction due to unspecified occlusion or stenosis of unspecified carotid artery;I;
+10-MC;I63.29;I6329;Cerebral infarction due to unspecified occlusion or stenosis of other precerebral arteries;I;
+10-MC;I63.30;I6330;Cerebral infarction due to thrombosis of unspecified cerebral artery;I;
+10-MC;I63.311;I63311;Cerebral infarction due to thrombosis of right middle cerebral artery;I;
+10-MC;I63.312;I63312;Cerebral infarction due to thrombosis of left middle cerebral artery;I;
+10-MC;I63.313;I63313;Cerebral infarction due to thrombosis of bilateral middle cerebral arteries;I;
+10-MC;I63.319;I63319;Cerebral infarction due to thrombosis of unspecified middle cerebral artery;I;
+10-MC;I63.321;I63321;Cerebral infarction due to thrombosis of right anterior cerebral artery;I;
+10-MC;I63.322;I63322;Cerebral infarction due to thrombosis of left anterior cerebral artery;I;
+10-MC;I63.323;I63323;Cerebral infarction due to thrombosis of bilateral anterior cerebral arteries;I;
+10-MC;I63.329;I63329;Cerebral infarction due to thrombosis of unspecified anterior cerebral artery;I;
+10-MC;I63.331;I63331;Cerebral infarction due to thrombosis of right posterior cerebral artery;I;
+10-MC;I63.332;I63332;Cerebral infarction due to thrombosis of left posterior cerebral artery;I;
+10-MC;I63.333;I63333;Cerebral infarction due to thrombosis of bilateral posterior cerebral arteries;I;
+10-MC;I63.339;I63339;Cerebral infarction due to thrombosis of unspecified posterior cerebral artery;I;
+10-MC;I63.341;I63341;Cerebral infarction due to thrombosis of right cerebellar artery;I;
+10-MC;I63.342;I63342;Cerebral infarction due to thrombosis of left cerebellar artery;I;
+10-MC;I63.343;I63343;Cerebral infarction due to thrombosis of bilateral cerebellar arteries;I;
+10-MC;I63.349;I63349;Cerebral infarction due to thrombosis of unspecified cerebellar artery;I;
+10-MC;I63.39;I6339;Cerebral infarction due to thrombosis of other cerebral artery;I;
+10-MC;I63.40;I6340;Cerebral infarction due to embolism of unspecified cerebral artery;I;
+10-MC;I63.411;I63411;Cerebral infarction due to embolism of right middle cerebral artery;I;
+10-MC;I63.412;I63412;Cerebral infarction due to embolism of left middle cerebral artery;I;
+10-MC;I63.413;I63413;Cerebral infarction due to embolism of bilateral middle cerebral arteries;I;
+10-MC;I63.419;I63419;Cerebral infarction due to embolism of unspecified middle cerebral artery;I;
+10-MC;I63.421;I63421;Cerebral infarction due to embolism of right anterior cerebral artery;I;
+10-MC;I63.422;I63422;Cerebral infarction due to embolism of left anterior cerebral artery;I;
+10-MC;I63.423;I63423;Cerebral infarction due to embolism of bilateral anterior cerebral arteries;I;
+10-MC;I63.429;I63429;Cerebral infarction due to embolism of unspecified anterior cerebral artery;I;
+10-MC;I63.431;I63431;Cerebral infarction due to embolism of right posterior cerebral artery;I;
+10-MC;I63.432;I63432;Cerebral infarction due to embolism of left posterior cerebral artery;I;
+10-MC;I63.433;I63433;Cerebral infarction due to embolism of bilateral posterior cerebral arteries;I;
+10-MC;I63.439;I63439;Cerebral infarction due to embolism of unspecified posterior cerebral artery;I;
+10-MC;I63.441;I63441;Cerebral infarction due to embolism of right cerebellar artery;I;
+10-MC;I63.442;I63442;Cerebral infarction due to embolism of left cerebellar artery;I;
+10-MC;I63.443;I63443;Cerebral infarction due to embolism of bilateral cerebellar arteries;I;
+10-MC;I63.449;I63449;Cerebral infarction due to embolism of unspecified cerebellar artery;I;
+10-MC;I63.49;I6349;Cerebral infarction due to embolism of other cerebral artery;I;
+10-MC;I63.50;I6350;Cerebral infarction due to unspecified occlusion or stenosis of unspecified cerebral artery;I;
+10-MC;I63.511;I63511;Cerebral infarction due to unspecified occlusion or stenosis of right middle cerebral artery;I;
+10-MC;I63.512;I63512;Cerebral infarction due to unspecified occlusion or stenosis of left middle cerebral artery;I;
+10-MC;I63.513;I63513;Cerebral infarction due to unspecified occlusion or stenosis of bilateral middle cerebral arteries;I;
+10-MC;I63.519;I63519;Cerebral infarction due to unspecified occlusion or stenosis of unspecified middle cerebral artery;I;
+10-MC;I63.521;I63521;Cerebral infarction due to unspecified occlusion or stenosis of right anterior cerebral artery;I;
+10-MC;I63.522;I63522;Cerebral infarction due to unspecified occlusion or stenosis of left anterior cerebral artery;I;
+10-MC;I63.523;I63523;Cerebral infarction due to unspecified occlusion or stenosis of bilateral anterior cerebral arteries;I;
+10-MC;I63.529;I63529;Cerebral infarction due to unspecified occlusion or stenosis of unspecified anterior cerebral artery;I;
+10-MC;I63.531;I63531;Cerebral infarction due to unspecified occlusion or stenosis of right posterior cerebral artery;I;
+10-MC;I63.532;I63532;Cerebral infarction due to unspecified occlusion or stenosis of left posterior cerebral artery;I;
+10-MC;I63.533;I63533;Cerebral infarction due to unspecified occlusion or stenosis of bilateral posterior cerebral arteries;I;
+10-MC;I63.539;I63539;Cerebral infarction due to unspecified occlusion or stenosis of unspecified posterior cerebral artery;I;
+10-MC;I63.541;I63541;Cerebral infarction due to unspecified occlusion or stenosis of right cerebellar artery;I;
+10-MC;I63.542;I63542;Cerebral infarction due to unspecified occlusion or stenosis of left cerebellar artery;I;
+10-MC;I63.543;I63543;Cerebral infarction due to unspecified occlusion or stenosis of bilateral cerebellar arteries;I;
+10-MC;I63.549;I63549;Cerebral infarction due to unspecified occlusion or stenosis of unspecified cerebellar artery;I;
+10-MC;I63.59;I6359;Cerebral infarction due to unspecified occlusion or stenosis of other cerebral artery;I;
+10-MC;I63.6;I636;Cerebral infarction due to cerebral venous thrombosis, nonpyogenic;I;
+10-MC;I63.8;I638;Other cerebral infarction;I;
+10-MC;I63.9;I639;Cerebral infarction, unspecified;I;
+10-MC;G46.0;G460;Middle cerebral artery syndrome;I;
+10-MC;G46.1;G461;Anterior cerebral artery syndrome;I;
+10-MC;G46.2;G462;Posterior cerebral artery syndrome;I;
+10-MC;G46.3;G463;Brain stem stroke syndrome;I;
+10-MC;G46.4;G464;Cerebellar stroke syndrome;I;
+10-MC;G46.5;G465;Pure motor lacunar syndrome;I;
+10-MC;G46.6;G466;Pure sensory lacunar syndrome;I;
+10-MC;G46.7;G467;Other lacunar syndromes;I;
+10-MC;G46.8;G468;Other vascular syndromes of brain in cerebrovascular diseases;I;
+10-MC;I67.81;I6781;Acute cerebrovascular insufficiency;T;
+10-MC;I67.82;I6782;Cerebral ischemia;T;
+10-MC;I67.83;I6783;Posterior reversible encephalopathy syndrome;T;
+10-MC;I67.841;I67841;Reversible cerebrovascular vasoconstriction syndrome;T;
+10-MC;I67.848;I67848;Other cerebrovascular vasospasm and vasoconstriction;T;
+10-MC;G45.0;G450;Vertebro-basilar artery syndrome;T;
+10-MC;G45.1;G451;Carotid artery syndrome (hemispheric);T;
+10-MC;G45.2;G452;Multiple and bilateral precerebral artery syndromes;T;
+10-MC;G45.3;G453;Amaurosis fugax;T;
+10-MC;G45.8;G458;Other transient cerebral ischemic attacks and related syndromes;T;
+10-MC;G45.9;G459;Transient cerebral ischemic attack, unspecified;T;
