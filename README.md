@@ -29,10 +29,10 @@ The process mining analysis has been tested with R v3.5.x. I thes the following 
 In addition, it is required to install the four bupaR forked packages from source code. To do so, launch the R  interpreter, and execute the following commands:
 
 ```R
-> install.packages("<path_to_R_Packages/edeaR.IACSmod", repos=NULL, type="source")
-> install.packages("<path_to_R_Packages/processmapR.IACSmod", repos=NULL, type="source")
-> install.packages("<path_to_R_Packages/processmonitR.IACSmod", repos=NULL, type="source")
-> install.packages("<path_to_R_Packages/bupaR.IACSmod", repos=NULL, type="source")
+> install.packages("<path_to_R_Packages>/edeaR.IACSmod", repos=NULL, type="source")
+> install.packages("<path_to_R_Packages>/processmapR.IACSmod", repos=NULL, type="source")
+> install.packages("<path_to_R_Packages>/processmonitR.IACSmod", repos=NULL, type="source")
+> install.packages("<path_to_R_Packages>/bupaR.IACSmod", repos=NULL, type="source")
 ```
 
 ### Pandoc
