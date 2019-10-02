@@ -69,16 +69,16 @@ Once having executed this two commands, a the file `process_mining_dashboard.htm
 
 For a fastest reproduction of the experiments, it is also possible to execute the process mining analysis within a docker container following this steps:
 
-1. Pull the `iacsbiocomputing/process_mining_RWD`docker image and create a container
+1. Pull the `iacsbiocomputing/process_mining_rwd`docker image and create a container
 
    ```bash
-   $ docker run -d --name process_mining_RWD_container iacsbiocomputing/process_mining_RWD
+   $ docker run -d --name process_mining_rwd_container iacsbiocomputing/process_mining_rwd
    ```
 
 2. Enter in the docker container 
 
    ```bash
-   $ docker exec -it process_mining_RWD_container bash
+   $ docker exec -it process_mining_rwd_container bash
    ```
 
 3. Within the docker container, locate the process mining package distribution
