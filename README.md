@@ -45,7 +45,7 @@ A MongoDB v4.x.x instance running in the default port (27017) is required.
 
 ## Example execution
 
-Using the example data available in `sample_data ` directoy the process mining runs in two steps.
+Using the example data available in `sample_data ` directoy the process mining runs in two steps.
 
 1. Activity log generation, using the Python script
 
