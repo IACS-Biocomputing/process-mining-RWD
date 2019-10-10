@@ -1,5 +1,5 @@
 # Code Stroke analysis using process mining on RWD datasets
-The current repository contain the materials to reproduce the Code Stroke analyses using process mining from RWD datasets detailed in the paper "*Construction of Empirical Clinical Pathways Process Models from Multiple Real-World Datasets*".
+The current repository contain the materials to reproduce the Code Stroke analyses using process mining from RWD datasets detailed in the paper "*Construction of Empirical Care Pathways Process Models from Multiple Real-World Datasets*".
 
 ## Repository contents
 
